@@ -1,6 +1,6 @@
 <p align="center"><img src="/resources/docs/banner.jpg"></p>
 
-LaraCollab, developed with Laravel and React, serves as a project management tool. The primary idea behind this initiative is to provide developers or development companies with a free platform to efficiently manage clients, projects, log time, and generate invoices. You may wonder, 'Why another tool when there are already feature-rich options available for free?' Yes, that's a valid point. However, my aim is to offer a project management tool specifically tailored for Laravel developers, giving them option to integrate and customize features according to their unique workflows.
+zi-management, developed with Laravel and React, serves as a project management tool. The primary idea behind this initiative is to provide developers or development companies with a free platform to efficiently manage clients, projects, log time, and generate invoices. You may wonder, 'Why another tool when there are already feature-rich options available for free?' Yes, that's a valid point. However, my aim is to offer a project management tool specifically tailored for Laravel developers, giving them option to integrate and customize features according to their unique workflows.
 
 ## Features
 
@@ -21,46 +21,11 @@ LaraCollab, developed with Laravel and React, serves as a project management too
 - Additional reports for daily logged time per user and total logged time.
 - Dark mode support for user preference.
 
-## Screenshots
-
-<p align="center">
-<img src="/resources/docs/screenshots/Dashboard - light.jpeg" width="45%">
-<img src="/resources/docs/screenshots/Dashboard - dark.jpeg" width="45%">
-</p>
-<p align="center">
-<img src="/resources/docs/screenshots/Projects - light.jpeg" width="45%">
-<img src="/resources/docs/screenshots/Projects - dark.jpeg" width="45%">
-</p>
-<p align="center">
-<img src="/resources/docs/screenshots/Project tasks - light.jpeg" width="45%">
-<img src="/resources/docs/screenshots/Project tasks - dark.jpeg" width="45%">
-</p>
-<p align="center">
-<img src="/resources/docs/screenshots/Task - light.jpeg" width="45%">
-<img src="/resources/docs/screenshots/Task - dark.jpeg" width="45%">
-</p>
-<p align="center">
-<img src="/resources/docs/screenshots/My tasks - light.jpeg" width="45%">
-<img src="/resources/docs/screenshots/My tasks - dark.jpeg" width="45%">
-</p>
-<p align="center">
-<img src="/resources/docs/screenshots/Activity - light.jpeg" width="45%">
-<img src="/resources/docs/screenshots/Activity - dark.jpeg" width="45%">
-</p>
-<p align="center">
-<img src="/resources/docs/screenshots/Invoice - light.jpeg" width="45%">
-<img src="/resources/docs/screenshots/Invoice - dark.jpeg" width="45%">
-</p>
-
-## Tech stack
-
-[Laravel](https://laravel.com) for backend, [React](https://react.dev) for frontend and [Inertia](https://inertiajs.com) for "glueing" them together. For the frontend React UI components, the awesome [Mantine](https://mantine.dev) library was used.
-
 ## Setup
 
 ### Project
 
-1. Clone the repository using `git clone https://github.com/vstruhar/lara-collab.git`
+1. Clone the repository using `git clone https://github.com/uwemartin/zi-management.git`
 2. Cd into the project
 3. Install npm dependencies with `npm install`
 4. Copy the `.env` file with `cp .env.example .env`
