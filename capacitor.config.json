@@ -1,0 +1,10 @@
+{
+  "appId": "zimatech.de",
+  "appName": "ZiManagement",
+  "webDir": "public",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "http://http://127.0.0.1:8000",
+    "cleartext": true
+  }
+}
