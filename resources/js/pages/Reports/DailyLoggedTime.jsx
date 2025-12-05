@@ -39,12 +39,12 @@ const DailyLoggedTime = () => {
   return (
     <>
       <Breadcrumbs fz={14} mb={30}>
-        <div>Reports</div>
-        <div>Daily logged time</div>
+        <div>Berichte</div>
+        <div>Täglich protokollierte Zeit</div>
       </Breadcrumbs>
 
       <Title order={1} mb={20}>
-        Daily logged time
+        Täglich protokollierte Zeit
       </Title>
 
       <ContainerBox px={35} py={25}>
@@ -52,7 +52,7 @@ const DailyLoggedTime = () => {
           <Group justify="space-between">
             <Group gap="xl">
               <MultiSelect
-                placeholder={form.data.projects.length ? null : "Select projects"}
+                placeholder={form.data.projects.length ? null : "Projekte auswählen"}
                 required
                 w={220}
                 value={form.data.projects}
@@ -62,7 +62,7 @@ const DailyLoggedTime = () => {
               />
 
               <MultiSelect
-                placeholder={form.data.users.length ? null : "Select users"}
+                placeholder={form.data.users.length ? null : "Benutzer auswählen"}
                 required
                 w={220}
                 value={form.data.users}
@@ -75,7 +75,7 @@ const DailyLoggedTime = () => {
                 <DatePickerInput
                   type="range"
                   valueFormat="MMM D"
-                  placeholder="Pick dates range"
+                  placeholder="Wählen Sie den Datumsbereich"
                   clearable
                   allowSingleDateInRange
                   miw={200}
@@ -85,20 +85,20 @@ const DailyLoggedTime = () => {
               </DatesProvider>
 
               <Checkbox
-                label="Billable"
+                label="Abrechnungsfähig"
                 checked={form.data.billable}
                 onChange={(event) => updateValue("billable", event.currentTarget.checked)}
               />
 
               <Checkbox
-                label="Completed"
+                label="Abgeschlossen"
                 checked={form.data.completed}
                 onChange={(event) => updateValue("completed", event.currentTarget.checked)}
               />
             </Group>
 
             <Button type="submit" disabled={form.processing}>
-              Submit
+              Einreichen
             </Button>
           </Group>
         </form>
@@ -110,7 +110,7 @@ const DailyLoggedTime = () => {
             <Table horizontalSpacing="xl" verticalSpacing="md" striped highlightOnHover>
               <Table.Thead>
                 <Table.Tr>
-                  <Table.Th>Date</Table.Th>
+                  <Table.Th>Datum</Table.Th>
                   {Object.keys(users).map((key) => (
                     <Table.Th key={users[key].user_id}>{users[key].user_name}</Table.Th>
                   ))}
@@ -128,7 +128,7 @@ const DailyLoggedTime = () => {
                   </Table.Tr>
                 ))}
                 <Table.Tr fw={800}>
-                  <Table.Td align="right">SUM</Table.Td>
+                  <Table.Td align="right">SUMME</Table.Td>
                   {Object.keys(users).map((userId) => (
                     <Table.Td key={userId}>
                       {Object.keys(items)
@@ -147,8 +147,8 @@ const DailyLoggedTime = () => {
         ) : (
           <Center mih={300}>
             <EmptyWithIcon
-              title="No logged time found"
-              subtitle="Try changing selected filters"
+              title="Keine protokollierte Zeit gefunden"
+              subtitle="Versuchen Sie, die ausgewählten Filter zu ändern"
               icon={IconClock}
             />
           </Center>
@@ -158,6 +158,6 @@ const DailyLoggedTime = () => {
   );
 };
 
-DailyLoggedTime.layout = (page) => <Layout title="Logged time sum">{page}</Layout>;
+DailyLoggedTime.layout = (page) => <Layout title="Protokollierte Zeitsumme">{page}</Layout>;
 
 export default DailyLoggedTime;

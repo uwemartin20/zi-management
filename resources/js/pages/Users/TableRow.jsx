@@ -38,7 +38,7 @@ export default function TableRow({ item }) {
       <Table.Td>
         <Text fz="sm">{item.email}</Text>
         <Text fz="xs" c="dimmed">
-          Email
+          E-mail
         </Text>
       </Table.Td>
       {can("view user rate") && (
@@ -59,17 +59,16 @@ export default function TableRow({ item }) {
             restorePermission="restore user"
             archive={{
               route: "users.destroy",
-              title: "Archive user",
-              content: `Are you sure you want to archive this user? This action will prevent
-                the user from logging in, while all other aspects related to the
-                user's actions will remain unaffected.`,
-              confirmLabel: "Archive",
+              title: "Archiv Benutzer",
+              content: `Möchten Sie diesen Benutzer wirklich archivieren? Diese Aktion verhindert, dass sich der Benutzer anmelden kann, 
+                während alle anderen Aspekte im Zusammenhang mit den Aktionen des Benutzers unberührt bleiben.`,
+              confirmLabel: "Archiv",
             }}
             restore={{
               route: "users.restore",
-              title: "Restore user",
-              content: `Are you sure you want to restore this user? This action will allow the user to login.`,
-              confirmLabel: "Restore",
+              title: "Benutzer wiederherstellen",
+              content: `Sind Sie sicher, dass Sie diesen Benutzer wiederherstellen möchten? Diese Aktion ermöglicht dem Benutzer die Anmeldung.`,
+              confirmLabel: "Wiederherstellen",
             }}
           />
         </Table.Td>

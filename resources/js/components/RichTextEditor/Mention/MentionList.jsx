@@ -61,7 +61,7 @@ export default forwardRef(function MentionList(props, ref) {
           </button>
         ))
       ) : (
-        <div className="item">No result</div>
+        <div className="item">Kein Ergebniss</div>
       )}
     </div>
   );

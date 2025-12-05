@@ -16,9 +16,9 @@ const RolesIndex = () => {
 
   const columns = prepareColumns([
     { label: "Name", column: "name" },
-    { label: "Permissions count", sortable: false },
+    { label: "Berechtigungen zählen", sortable: false },
     {
-      label: "Actions",
+      label: "Aktionen",
       sortable: false,
       visible: actionColumnVisibility("role"),
     },
@@ -38,7 +38,7 @@ const RolesIndex = () => {
       <Grid justify="space-between" align="center">
         <Grid.Col span="content">
           <Group>
-            <SearchInput placeholder="Search roles" search={search} />
+            <SearchInput placeholder="Rollen suchen" search={search} />
             <ArchivedFilterButton />
           </Group>
         </Grid.Col>
@@ -49,7 +49,7 @@ const RolesIndex = () => {
               radius="xl"
               onClick={() => redirectTo("settings.roles.create")}
             >
-              Create
+              Erstellen
             </Button>
           )}
         </Grid.Col>
@@ -70,6 +70,6 @@ const RolesIndex = () => {
   );
 };
 
-RolesIndex.layout = (page) => <Layout title="Roles">{page}</Layout>;
+RolesIndex.layout = (page) => <Layout title="Rollen">{page}</Layout>;
 
 export default RolesIndex;

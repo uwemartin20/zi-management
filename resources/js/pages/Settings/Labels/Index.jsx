@@ -15,10 +15,10 @@ const LabelsIndex = () => {
   const { items } = usePage().props;
 
   const columns = prepareColumns([
-    { label: "Color", sortable: false },
+    { label: "Farbe", sortable: false },
     { label: "Name", column: "name" },
     {
-      label: "Actions",
+      label: "Aktionen",
       sortable: false,
       visible: actionColumnVisibility("label"),
     },
@@ -38,7 +38,7 @@ const LabelsIndex = () => {
       <Grid justify="space-between" align="center">
         <Grid.Col span="content">
           <Group>
-            <SearchInput placeholder="Search labels" search={search} />
+            <SearchInput placeholder="Label suchen" search={search} />
             <ArchivedFilterButton />
           </Group>
         </Grid.Col>
@@ -49,7 +49,7 @@ const LabelsIndex = () => {
               radius="xl"
               onClick={() => redirectTo("settings.labels.create")}
             >
-              Create
+              Erstellen
             </Button>
           )}
         </Grid.Col>
@@ -70,6 +70,6 @@ const LabelsIndex = () => {
   );
 };
 
-LabelsIndex.layout = (page) => <Layout title="Labels">{page}</Layout>;
+LabelsIndex.layout = (page) => <Layout title="Label">{page}</Layout>;
 
 export default LabelsIndex;

@@ -17,9 +17,9 @@ export default function TaskGroupActions({ group, ...props }) {
   const openArchiveModal = () =>
     openConfirmModal({
       type: "danger",
-      title: "Archive task group",
-      content: `Are you sure you want to archive this task group?`,
-      confirmLabel: "Archive",
+      title: "Archiv Aufgabegruppe",
+      content: `Möchten Sie diese Aufgabengruppe wirklich archivieren?`,
+      confirmLabel: "Archiv",
       confirmProps: { color: "red" },
       onConfirm: () => archiveForm.submit({ preserveScroll: true }),
     });
@@ -27,9 +27,9 @@ export default function TaskGroupActions({ group, ...props }) {
   const openRestoreModal = () =>
     openConfirmModal({
       type: "info",
-      title: "Restore task group",
-      content: `Are you sure you want to restore this task group?`,
-      confirmLabel: "Restore",
+      title: "Aufgabengruppe wiederherstellen",
+      content: `Möchten Sie diese Aufgabengruppe wirklich wiederherstellen?`,
+      confirmLabel: "Wiederherstellen",
       confirmProps: { color: "blue" },
       onConfirm: () => restoreForm.submit({ preserveScroll: true }),
     });
@@ -62,7 +62,7 @@ export default function TaskGroupActions({ group, ...props }) {
                 }
                 onClick={openEditModal}
               >
-                Edit
+                Bearbeiten
               </Menu.Item>
             )}
             {can("restore task group") && route().params.archived && (
@@ -73,7 +73,7 @@ export default function TaskGroupActions({ group, ...props }) {
                 color="blue"
                 onClick={openRestoreModal}
               >
-                Restore
+                Wiederherstellen
               </Menu.Item>
             )}
             {can("archive task group") && !route().params.archived && (
@@ -84,7 +84,7 @@ export default function TaskGroupActions({ group, ...props }) {
                 color="red"
                 onClick={openArchiveModal}
               >
-                Archive
+                Archiv
               </Menu.Item>
             )}
           </Menu.Dropdown>

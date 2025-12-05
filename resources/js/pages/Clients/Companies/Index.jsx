@@ -15,11 +15,11 @@ const ClientCompaniesIndex = () => {
   const { items } = usePage().props;
 
   const columns = prepareColumns([
-    { label: 'Company', column: 'name' },
-    { label: 'Email', column: 'email' },
-    { label: 'Clients', sortable: false },
+    { label: 'Firma', column: 'name' },
+    { label: 'E-mail', column: 'email' },
+    { label: 'Mitarbeiter', sortable: false },
     {
-      label: 'Actions',
+      label: 'Aktionen',
       sortable: false,
       visible: actionColumnVisibility('client company'),
     },
@@ -61,7 +61,7 @@ const ClientCompaniesIndex = () => {
               radius='xl'
               onClick={() => redirectTo('clients.companies.create')}
             >
-              Create
+              Erstellen
             </Button>
           )}
         </Grid.Col>
@@ -88,6 +88,6 @@ const ClientCompaniesIndex = () => {
   );
 };
 
-ClientCompaniesIndex.layout = page => <Layout title='Clients'>{page}</Layout>;
+ClientCompaniesIndex.layout = page => <Layout title='Firmen'>{page}</Layout>;
 
 export default ClientCompaniesIndex;

@@ -115,14 +115,14 @@ export const InvoiceCreate = () => {
     <>
       <Breadcrumbs fz={14} mb={30}>
         <Anchor href="#" onClick={() => redirectTo("invoices.index")} fz={14}>
-          Invoices
+          Rechnungen
         </Anchor>
-        <div>Create</div>
+        <div>Erstellen</div>
       </Breadcrumbs>
 
       <Grid justify="space-between" align="flex-end" gutter="xl" mb="lg">
         <Grid.Col span="auto">
-          <Title order={1}>Create invoice</Title>
+          <Title order={1}>Rechnungen Erstellen</Title>
         </Grid.Col>
         <Grid.Col span="content"></Grid.Col>
       </Grid>
@@ -131,8 +131,8 @@ export const InvoiceCreate = () => {
         <ContainerBox>
           <form onSubmit={submit}>
             <TextInput
-              label="Invoice number"
-              placeholder="Invoice number"
+              label="Rechnungsnummer"
+              placeholder="Rechnungsnummer"
               required
               value={form.data.number}
               onChange={(e) => updateValue("number", e.target.value)}
@@ -140,8 +140,8 @@ export const InvoiceCreate = () => {
             />
 
             <Select
-              label="Client company"
-              placeholder="Select client company"
+              label="Kundenunternehmen"
+              placeholder="Kundenunternehmen auswählen"
               searchable={true}
               allowDeselect={false}
               mt="md"
@@ -153,9 +153,9 @@ export const InvoiceCreate = () => {
             />
 
             <MultiSelect
-              label="Projects"
+              label="Projekte"
               placeholder={
-                filteredProjects.length ? "Select projects" : "Please select client company first"
+                filteredProjects.length ? "Projekte auswählen" : "Bitte wählen Sie zuerst das Kundenunternehmen aus"
               }
               disabled={filteredProjects.length === 0}
               withAsterisk
@@ -167,7 +167,7 @@ export const InvoiceCreate = () => {
             />
 
             <Radio.Group
-              label="Payment type"
+              label="Zahlungsart"
               mt="md"
               withAsterisk
               value={form.data.type}
@@ -175,13 +175,13 @@ export const InvoiceCreate = () => {
             >
               <Group mt="xs">
                 <Radio value="hourly" label="Hourly" />
-                <Radio value="fixed_amount" label="Fixed amount" />
+                <Radio value="fixed_amount" label="Festbetrag" />
               </Group>
             </Radio.Group>
 
             {form.data.type === "hourly" && (
               <NumberInput
-                label="Hourly rate"
+                label="Stundensatz"
                 mt="md"
                 allowNegative={false}
                 clampBehavior="strict"
@@ -196,7 +196,7 @@ export const InvoiceCreate = () => {
 
             {form.data.type === "fixed_amount" && (
               <NumberInput
-                label="Fixed amount"
+                label="Festbetrag"
                 mt="md"
                 allowNegative={false}
                 clampBehavior="strict"
@@ -211,7 +211,7 @@ export const InvoiceCreate = () => {
 
             <Textarea
               label="Note"
-              placeholder="Invoice note"
+              placeholder="Rechnungsbeleg"
               mt="md"
               autosize
               minRows={4}
@@ -222,7 +222,7 @@ export const InvoiceCreate = () => {
 
             <Group justify="space-between" mt="xl">
               <BackButton route="invoices.index" />
-              <ActionButton loading={form.processing}>Create</ActionButton>
+              <ActionButton loading={form.processing}>Erstellen</ActionButton>
             </Group>
           </form>
         </ContainerBox>
@@ -266,8 +266,8 @@ export const InvoiceCreate = () => {
                             <Tooltip
                               label={
                                 Number(task.total_minutes) === 0
-                                  ? "There is no logged time on this task"
-                                  : `Logged time: ${Number(task.total_minutes) / 60}h`
+                                  ? "Für diese Aufgabe wurde keine Zeit protokolliert."
+                                  : `Protokollierte Zeit: ${Number(task.total_minutes) / 60}h`
                               }
                               openDelay={500}
                               withArrow
@@ -288,7 +288,7 @@ export const InvoiceCreate = () => {
                     ))
                   ) : (
                     <Text size="sm" c="dimmed">
-                      No tasks with logged time were found
+                      Es wurden keine Aufgaben mit protokollierter Zeit gefunden.
                     </Text>
                   )}
                 </Box>
@@ -296,7 +296,7 @@ export const InvoiceCreate = () => {
               <Flex justify="flex-end" mt="xl">
                 <Stack gap={0}>
                   <Text size="lg" lts={1} fw={600} mb={-5}>
-                    Total:
+                    Gesamt:
                   </Text>
                   <Text fw={700} fz={32}>
                     {money(total, currency.code)}
@@ -310,10 +310,10 @@ export const InvoiceCreate = () => {
                 <Box align="center">
                   <IconSearch style={{ width: rem(55), height: rem(55) }} opacity={0.5} />
                   <Text fz={24} fw={600} align="center">
-                    No tasks found
+                    Keine Aufgaben gefunden
                   </Text>
                   <Text fz={15} c="dimmed">
-                    Select company and at least one project
+                    Unternehmen und mindestens ein Projekt auswählen
                   </Text>
                 </Box>
               </Center>

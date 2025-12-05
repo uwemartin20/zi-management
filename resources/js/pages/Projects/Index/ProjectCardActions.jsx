@@ -12,9 +12,9 @@ export default function ProjectCardActions({ item }) {
   const openArchiveModal = () =>
     openConfirmModal({
       type: "danger",
-      title: "Archive project",
-      content: `Are you sure you want to archive this project? This action will prevent users from accessing it.`,
-      confirmLabel: "Archive",
+      title: "Archivprojekt",
+      content: `Möchten Sie dieses Projekt wirklich archivieren? Dadurch wird verhindert, dass Benutzer darauf zugreifen können.`,
+      confirmLabel: "Archiv",
       confirmProps: { color: "red" },
       onConfirm: () => archiveForm.submit({ preserveScroll: true }),
     });
@@ -22,9 +22,9 @@ export default function ProjectCardActions({ item }) {
   const openRestoreModal = () =>
     openConfirmModal({
       type: "info",
-      title: "Restore project",
-      content: `Are you sure you want to restore this project?`,
-      confirmLabel: "Restore",
+      title: "Projekt wiederherstellen",
+      content: `Sind Sie sicher, dass Sie dieses Projekt wiederherstellen möchten?`,
+      confirmLabel: "Wiederherstellen",
       confirmProps: { color: "blue" },
       onConfirm: () => restoreForm.submit({ preserveScroll: true }),
     });
@@ -63,7 +63,7 @@ export default function ProjectCardActions({ item }) {
                 onClick={openUserAccess}
                 data-ignore-link
               >
-                User access
+                Benutzerzugriff
               </Menu.Item>
             )}
             {can("edit project") && (
@@ -78,7 +78,7 @@ export default function ProjectCardActions({ item }) {
                 onClick={() => router.visit(route("projects.edit", item.id))}
                 data-ignore-link
               >
-                Edit
+                Bearbeiten
               </Menu.Item>
             )}
             {can("restore project") && route().params.archived && (
@@ -94,7 +94,7 @@ export default function ProjectCardActions({ item }) {
                 onClick={openRestoreModal}
                 data-ignore-link
               >
-                Restore
+                Wiederherstellen
               </Menu.Item>
             )}
             {can("archive project") && !route().params.archived && (
@@ -110,7 +110,7 @@ export default function ProjectCardActions({ item }) {
                 onClick={openArchiveModal}
                 data-ignore-link
               >
-                Archive
+                Archiv
               </Menu.Item>
             )}
           </Menu.Dropdown>

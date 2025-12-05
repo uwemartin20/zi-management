@@ -4,17 +4,17 @@ import { Head, router } from "@inertiajs/react";
 
 export default function Error({ status }) {
   const title = {
-    503: "Service Unavailable",
-    500: "Server Error",
-    404: "Page Not Found",
-    403: "Forbidden",
+    503: "Service nicht verfügbar",
+    500: "Serverfehler",
+    404: "Seite nicht gefunden",
+    403: "Verboten",
   }[status];
 
   const description = {
-    503: "Sorry, we are doing some maintenance. Please check back soon.",
-    500: "Whoops, something went wrong on our servers.",
-    404: "Sorry, the page you are looking for could not be found.",
-    403: "Sorry, you are forbidden from accessing this page.",
+    503: "Entschuldigung, wir führen gerade Wartungsarbeiten durch. Bitte schauen Sie bald wieder vorbei.",
+    500: "Hoppla, da ist etwas auf unseren Servern schiefgelaufen.",
+    404: "Die gesuchte Seite konnte leider nicht gefunden werden.",
+    403: "Leider ist Ihnen der Zugriff auf diese Seite untersagt.",
   }[status];
 
   return (
@@ -35,7 +35,7 @@ export default function Error({ status }) {
             </Text>
             <Group justify="center">
               <Button size="md" onClick={() => router.get(route("dashboard"))}>
-                Take me back to home page
+                Zurück zur Startseite
               </Button>
             </Group>
           </div>

@@ -45,14 +45,14 @@ const RoleCreate = () => {
           onClick={() => redirectTo("settings.roles.index")}
           fz={14}
         >
-          Roles
+          Rollen
         </Anchor>
-        <div>Create</div>
+        <div>Erstellen</div>
       </Breadcrumbs>
 
       <Grid justify="space-between" align="flex-end" gutter="xl" mb="lg">
         <Grid.Col span="auto">
-          <Title order={1}>Create role</Title>
+          <Title order={1}>Rollen Erstellen</Title>
         </Grid.Col>
         <Grid.Col span="content"></Grid.Col>
       </Grid>
@@ -61,7 +61,7 @@ const RoleCreate = () => {
         <form onSubmit={submit}>
           <TextInput
             label="Name"
-            placeholder="Role name"
+            placeholder="Rollename"
             required
             value={form.data.name}
             onChange={(e) => updateValue("name", e.target.value)}
@@ -69,7 +69,7 @@ const RoleCreate = () => {
           />
 
           <Title order={3} mt="xl">
-            Permissions
+            Zugriffen
           </Title>
 
           {Object.keys(allPermissionsGrouped).map((group) => (
@@ -93,7 +93,7 @@ const RoleCreate = () => {
 
           <Group justify="space-between" mt="xl">
             <BackButton route="settings.roles.index" />
-            <ActionButton loading={form.processing}>Create</ActionButton>
+            <ActionButton loading={form.processing}>Erstellen</ActionButton>
           </Group>
         </form>
       </ContainerBox>
@@ -101,6 +101,6 @@ const RoleCreate = () => {
   );
 };
 
-RoleCreate.layout = (page) => <Layout title="Create role">{page}</Layout>;
+RoleCreate.layout = (page) => <Layout title="Rolle Erstellen">{page}</Layout>;
 
 export default RoleCreate;

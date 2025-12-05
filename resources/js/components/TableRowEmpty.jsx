@@ -5,7 +5,7 @@ export default function TableRowEmpty(props) {
     <Table.Tr>
       <Table.Td {...props}>
         <Text fz="md" ta="center" py={50}>
-          No items were found
+          Es wurden keine Gegenstände gefunden
         </Text>
       </Table.Td>
     </Table.Tr>

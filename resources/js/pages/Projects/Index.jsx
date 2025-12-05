@@ -31,7 +31,7 @@ const ProjectsIndex = () => {
               radius="xl"
               onClick={() => redirectTo("projects.create")}
             >
-              Create
+              Erstellen
             </Button>
           )}
         </Grid.Col>
@@ -46,8 +46,8 @@ const ProjectsIndex = () => {
       ) : (
         <Center mih={400}>
           <EmptyWithIcon
-            title="No projects found"
-            subtitle="or you do not have access to any of them"
+            title="Keine Projekte gefunden"
+            subtitle="oder Sie haben keinen Zugriff auf sie"
             icon={IconSearch}
           />
         </Center>
@@ -56,6 +56,6 @@ const ProjectsIndex = () => {
   );
 };
 
-ProjectsIndex.layout = (page) => <Layout title="Projects">{page}</Layout>;
+ProjectsIndex.layout = (page) => <Layout title="Projekte">{page}</Layout>;
 
 export default ProjectsIndex;

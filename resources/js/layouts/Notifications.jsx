@@ -84,8 +84,8 @@ export default function Notifications() {
             ) : (
               <Center mih={100}>
                 <EmptyWithIcon
-                  title="Recent notifications"
-                  subtitle="Will be shown here"
+                  title="Aktuelle Benachrichtigungen"
+                  subtitle="Wird hier angezeigt"
                   icon={IconMessage}
                   titleFontSize={17}
                   subtitleFontSize={13}
@@ -104,7 +104,7 @@ export default function Notifications() {
               my={6}
               className={classes.link}
             >
-              View all my notifications
+              Alle meine Benachrichtigungen anzeigen
             </UnstyledButton>
           </Menu.Dropdown>
         </Indicator>

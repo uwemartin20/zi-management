@@ -14,7 +14,7 @@ export function UserInfoCard({ user }) {
         </Grid.Col>
         <Grid.Col span="auto">
           <Text fz="xs" tt="uppercase" fw={700} c="dimmed">
-            {user.job_title || "Job title"}
+            {user.job_title || "Berufsbezeichnung"}
           </Text>
 
           <Text fz="lg" fw={500} className={classes.name}>

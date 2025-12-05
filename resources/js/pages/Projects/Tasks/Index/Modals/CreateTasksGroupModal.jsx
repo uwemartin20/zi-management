@@ -20,7 +20,7 @@ function ModalForm() {
     <form onSubmit={submitModal}>
       <TextInput
         label="Name"
-        placeholder="Group name"
+        placeholder="Gruppename"
         required
         data-autofocus
         value={form.data.name}
@@ -41,7 +41,7 @@ const CreateTasksGroupModal = () => {
   modals.open({
     title: (
       <Text size="xl" fw={700} mb={-10}>
-        Create tasks group
+        Aufgabengruppe Erstellen
       </Text>
     ),
     centered: true,

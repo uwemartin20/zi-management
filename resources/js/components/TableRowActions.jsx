@@ -81,7 +81,7 @@ export default function TableRowActions({
                   color="red"
                   onClick={openArchiveModal}
                 >
-                  Archive
+                  Archiv
                 </Menu.Item>
               )}
             </Menu.Dropdown>

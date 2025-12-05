@@ -21,7 +21,7 @@ export default function RecentlyAssignedTasks({ tasks }) {
   return (
     <Card bg="none">
       <Title order={3} ml={15}>
-        Recently assigned tasks
+        Kürzlich zugewiesene Aufgaben
       </Title>
 
       <Divider my={14} />
@@ -42,7 +42,7 @@ export default function RecentlyAssignedTasks({ tasks }) {
                       {task.name}
                     </Text>
                     <Group>
-                      <Tooltip label="Task group" openDelay={500} withArrow>
+                      <Tooltip label="Aufgabegruppe" openDelay={500} withArrow>
                         <TaskGroupLabel>{task.task_group.name}</TaskGroupLabel>
                       </Tooltip>
                       <Text fz={11} c="dimmed">
@@ -62,7 +62,7 @@ export default function RecentlyAssignedTasks({ tasks }) {
         </ScrollArea>
       ) : (
         <Center my={30}>
-          <EmptyWithIcon title="No tasks" subtitle="You have no assigned tasks" icon={IconSearch} />
+          <EmptyWithIcon title="Keine Aufgaben" subtitle="Ihnen sind keine Aufgaben zugewiesen." icon={IconSearch} />
         </Center>
       )}
     </Card>

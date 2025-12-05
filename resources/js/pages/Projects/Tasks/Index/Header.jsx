@@ -32,11 +32,11 @@ export default function Header() {
         <Group mb="lg">
           <Title order={1}>
             {project.name}
-            {project.archived_at && <Text size="2rem" fw={500} c="red.8" ml="md" span>(archived)</Text>}
+            {project.archived_at && <Text size="2rem" fw={500} c="red.8" ml="md" span>(archiviert)</Text>}
           </Title>
         </Group>
         <Group>
-          <SearchInput placeholder="Search tasks" search={search} mr="md" />
+          <SearchInput placeholder="Aufgaben Suchen" search={search} mr="md" />
 
           <ActionIcon.Group>
             {tasksView === "kanban" && (
@@ -87,7 +87,7 @@ export default function Header() {
               radius="xl"
               onClick={() => openCreateTask()}
             >
-              Add task
+              Aufgaben Erstellen
             </Button>
           )}
         </Group>

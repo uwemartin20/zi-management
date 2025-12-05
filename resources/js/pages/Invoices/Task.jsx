@@ -100,8 +100,8 @@ export default function Task({ task, selectedTasks, toggleTask, currency, type, 
             <Tooltip
               label={
                 Number(task.total_minutes) === 0
-                  ? 'There is no logged time on this task'
-                  : `Logged time: ${Number(task.total_minutes) / 60}h`
+                  ? 'Für diese Aufgabe wurde keine Zeit protokolliert.'
+                  : `Protokollierte Zeit: ${Number(task.total_minutes) / 60}h`
               }
               openDelay={500}
               withArrow

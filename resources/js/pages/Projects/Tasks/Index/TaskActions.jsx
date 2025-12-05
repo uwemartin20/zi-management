@@ -13,9 +13,9 @@ export default function TaskActions({ task, ...props }) {
   const openArchiveModal = () =>
     openConfirmModal({
       type: "danger",
-      title: "Archive task",
-      content: `Are you sure you want to archive this task?`,
-      confirmLabel: "Archive",
+      title: "Archivierungsaufgabe",
+      content: `Möchten Sie diese Aufgabe wirklich archivieren?`,
+      confirmLabel: "Archiv",
       confirmProps: { color: "red" },
       onConfirm: () => archiveForm.submit({ preserveScroll: true }),
     });
@@ -23,9 +23,9 @@ export default function TaskActions({ task, ...props }) {
   const openRestoreModal = () =>
     openConfirmModal({
       type: "info",
-      title: "Restore task",
-      content: `Are you sure you want to restore this task?`,
-      confirmLabel: "Restore",
+      title: "Aufgabe wiederherstellen",
+      content: `Möchten Sie diesen Vorgang wirklich wiederherstellen?`,
+      confirmLabel: "Wiederherstellen",
       confirmProps: { color: "blue" },
       onConfirm: () => restoreForm.submit({ preserveScroll: true }),
     });
@@ -56,7 +56,7 @@ export default function TaskActions({ task, ...props }) {
                 color="blue"
                 onClick={openRestoreModal}
               >
-                Restore
+                Wiederherstellen
               </Menu.Item>
             )}
             {can("archive task") && !route().params.archived && (
@@ -67,7 +67,7 @@ export default function TaskActions({ task, ...props }) {
                 color="red"
                 onClick={openArchiveModal}
               >
-                Archive
+                Archiv
               </Menu.Item>
             )}
           </Menu.Dropdown>

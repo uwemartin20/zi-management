@@ -30,6 +30,6 @@ export default function ArchivedItems({ groups, tasks }) {
       )}
     </>
   ) : (
-    <EmptyResult title="No tasks or groups found" subtitle="or none match your search criteria" />
+    <EmptyResult title="Keine Aufgaben oder Gruppen gefunden" subtitle="oder keines entspricht Ihren Suchkriterien" />
   );
 }

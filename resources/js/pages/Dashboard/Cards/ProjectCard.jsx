@@ -43,7 +43,7 @@ export function ProjectCard({ project }) {
           <div>
             <Tooltip label="Completed tasks" openDelay={500} withArrow>
               <Text fz="lg" fw={500} inline span>
-                Tasks: {project.completed_tasks_count} / {project.all_tasks_count}
+                Aufgaben: {project.completed_tasks_count} / {project.all_tasks_count}
               </Text>
             </Tooltip>
           </div>
@@ -56,12 +56,12 @@ export function ProjectCard({ project }) {
             {
               value: overduePercent,
               color: "red",
-              tooltip: `Overdue: ${project.overdue_tasks_count}`,
+              tooltip: `Überfällig: ${project.overdue_tasks_count}`,
             },
             {
               value: completedPercent,
               color: "blue",
-              tooltip: `Completed: ${project.completed_tasks_count}`,
+              tooltip: `Abgeschlossen: ${project.completed_tasks_count}`,
             },
           ]}
           label={

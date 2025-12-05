@@ -15,7 +15,7 @@ export default function Task({ task }) {
       wrap="nowrap"
     >
       <Group gap="sm" wrap="nowrap">
-        <Tooltip label="Task group" openDelay={1000} withArrow>
+        <Tooltip label="Aufgabegruppe" openDelay={1000} withArrow>
           <TaskGroupLabel size="sm">{task.task_group.name}</TaskGroupLabel>
         </Tooltip>
         {task.assigned_to_user && (
@@ -30,7 +30,7 @@ export default function Task({ task }) {
 
         <Tooltip
           disabled={!isOverdue(task)}
-          label={`${diffForHumans(task.due_on, true)} overdue`}
+          label={`${diffForHumans(task.due_on, true)} überfällig`}
           openDelay={1000}
           withArrow
         >

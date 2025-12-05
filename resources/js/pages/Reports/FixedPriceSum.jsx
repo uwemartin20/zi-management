@@ -50,15 +50,15 @@ const FixedPriceSum = () => {
         fz={14}
         mb={30}
       >
-        <div>Reports</div>
-        <div>Fixed price sum</div>
+        <div>Berichte</div>
+        <div>Festpreissumme</div>
       </Breadcrumbs>
 
       <Title
         order={1}
         mb={20}
       >
-        Fixed price sum
+        Festpreissumme
       </Title>
 
       <ContainerBox
@@ -69,7 +69,7 @@ const FixedPriceSum = () => {
           <Group justify='space-between'>
             <Group gap='xl'>
               <MultiSelect
-                placeholder={form.data.projects.length ? null : 'Select projects'}
+                placeholder={form.data.projects.length ? null : 'Projekte auswählen'}
                 required
                 w={220}
                 value={form.data.projects}
@@ -79,7 +79,7 @@ const FixedPriceSum = () => {
               />
 
               <MultiSelect
-                placeholder={form.data.users.length ? null : 'Select users'}
+                placeholder={form.data.users.length ? null : 'Benutzer auswählen'}
                 required
                 w={220}
                 value={form.data.users}
@@ -92,7 +92,7 @@ const FixedPriceSum = () => {
                 <DatePickerInput
                   type='range'
                   valueFormat='MMM D'
-                  placeholder='Pick dates range'
+                  placeholder='Wählen Sie den Datumsbereich'
                   clearable
                   allowSingleDateInRange
                   miw={200}
@@ -102,13 +102,13 @@ const FixedPriceSum = () => {
               </DatesProvider>
 
               <Checkbox
-                label='Billable'
+                label='Abrechnungsfähig'
                 checked={form.data.billable}
                 onChange={event => updateValue('billable', event.currentTarget.checked)}
               />
 
               <Checkbox
-                label='Completed'
+                label='Abgeschlossen'
                 checked={form.data.completed}
                 onChange={event => updateValue('completed', event.currentTarget.checked)}
               />
@@ -118,7 +118,7 @@ const FixedPriceSum = () => {
               type='submit'
               disabled={form.processing}
             >
-              Submit
+              Einreichen
             </Button>
           </Group>
         </form>
@@ -139,9 +139,9 @@ const FixedPriceSum = () => {
             >
               <Table.Thead>
                 <Table.Tr>
-                  <Table.Th>User</Table.Th>
-                  <Table.Th>Total Tasks</Table.Th>
-                  <Table.Th>Total Fixed Price</Table.Th>
+                  <Table.Th>Benutzer</Table.Th>
+                  <Table.Th>Gesamtaufgaben</Table.Th>
+                  <Table.Th>Gesamtfestpreis</Table.Th>
                 </Table.Tr>
               </Table.Thead>
               <Table.Tbody>
@@ -163,8 +163,8 @@ const FixedPriceSum = () => {
         ) : (
           <Center mih={300}>
             <EmptyWithIcon
-              title='No fixed price tasks found'
-              subtitle='Try changing selected filters'
+              title='Es wurden keine Festpreisaufträge gefunden'
+              subtitle='Versuchen Sie, die ausgewählten Filter zu ändern'
               icon={IconCurrencyDollar}
             />
           </Center>
@@ -174,6 +174,6 @@ const FixedPriceSum = () => {
   );
 };
 
-FixedPriceSum.layout = page => <Layout title='Fixed price sum'>{page}</Layout>;
+FixedPriceSum.layout = page => <Layout title='Festpreissumme'>{page}</Layout>;
 
 export default FixedPriceSum;

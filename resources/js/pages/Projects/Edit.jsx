@@ -60,9 +60,9 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
           onClick={() => redirectTo('projects.index')}
           fz={14}
         >
-          Projects
+          Projekte
         </Anchor>
-        <div>Edit</div>
+        <div>Bearbeiten</div>
       </Breadcrumbs>
 
       <Grid
@@ -72,7 +72,7 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
         mb='lg'
       >
         <Grid.Col span='auto'>
-          <Title order={1}>Edit project</Title>
+          <Title order={1}>Projekt bearbeiten</Title>
         </Grid.Col>
         <Grid.Col span='content'></Grid.Col>
       </Grid>
@@ -81,7 +81,7 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
         <form onSubmit={submit}>
           <TextInput
             label='Name'
-            placeholder='Project name'
+            placeholder='Projektname'
             required
             mt='md'
             value={form.data.name}
@@ -90,8 +90,8 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
           />
 
           <Textarea
-            label='Description'
-            placeholder='Project description'
+            label='Beschreibung'
+            placeholder='Projektbeschreibung'
             mt='md'
             autosize
             minRows={4}
@@ -101,8 +101,8 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
           />
 
           <Select
-            label='Company requesting work'
-            placeholder='Select company'
+            label='Firma, die den Auftrag anfordert'
+            placeholder='Unternehmen auswählen'
             required
             mt='md'
             value={form.data.client_company_id?.toString()}
@@ -112,8 +112,8 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
           />
 
           <MultiSelect
-            label='Grant access to users'
-            placeholder='Select users'
+            label='Benutzern Zugriff gewähren'
+            placeholder='Benutzer auswählen'
             mt='md'
             searchable
             value={form.data.users}
@@ -123,8 +123,8 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
           />
 
           <Select
-            label='Default pricing type'
-            placeholder='Select pricing type'
+            label='Standardpreisart'
+            placeholder='Preisart auswählen'
             required
             mt='md'
             value={form.data.default_pricing_type}
@@ -134,7 +134,7 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
           />
 
           <NumberInput
-            label='Hourly rate'
+            label='Stundensatz'
             mt='md'
             allowNegative={false}
             clampBehavior='strict'
@@ -151,7 +151,7 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
             mt='xl'
           >
             <BackButton route='projects.index' />
-            <ActionButton loading={form.processing}>Update</ActionButton>
+            <ActionButton loading={form.processing}>Aktualisieren</ActionButton>
           </Group>
         </form>
       </ContainerBox>
@@ -159,6 +159,6 @@ const ProjectEdit = ({ dropdowns: { companies, users, currencies } }) => {
   );
 };
 
-ProjectEdit.layout = page => <Layout title='Edit project'>{page}</Layout>;
+ProjectEdit.layout = page => <Layout title='Projekt bearbeiten'>{page}</Layout>;
 
 export default ProjectEdit;

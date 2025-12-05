@@ -7,7 +7,7 @@ export default function ClearFiltersButton() {
   const usingFilters = hasUrlParams(["archived"]);
 
   return (
-    <Tooltip label="Clear filters" openDelay={500} withArrow>
+    <Tooltip label="Filter löschen" openDelay={500} withArrow>
       <ActionIcon
         variant="default"
         size="lg"

@@ -39,10 +39,10 @@ const Login = ({ notify }) => {
   return (
     <>
       <Title ta="center" className={classes.title}>
-        Welcome back!
+        Zi-Management
       </Title>
       <Text c="dimmed" size="sm" ta="center" mt={5}>
-        You may login to your account below
+        Sie können sich unten in Ihr Konto einloggen.
       </Text>
 
       <LoginNotification notify={notify} />
@@ -63,11 +63,11 @@ const Login = ({ notify }) => {
             </Button>
           </Group>
 
-          <Divider label="Or continue with email" labelPosition="center" my="lg" />
+          <Divider label="Oder fahren Sie per E-Mail fort" labelPosition="center" my="lg" />
 
           <TextInput
-            label="Email"
-            placeholder="Your email"
+            label="E-mail"
+            placeholder="Ihre E-mail"
             required
             value={form.data.email}
             onChange={(e) => form.setData("email", e.target.value)}
@@ -76,25 +76,25 @@ const Login = ({ notify }) => {
           />
           <PasswordInput
             ref={passwordRef}
-            label="Password"
-            placeholder="Your password"
+            label="Passwort"
+            placeholder="Ihrem passwort"
             required
             mt="md"
             value={form.data.password}
             onChange={(e) => form.setData("password", e.target.value)}
           />
           <Group justify="space-between" mt="lg">
-            <Checkbox label="Remember me" />
+            <Checkbox label="Erinnere an mich" />
             <Anchor
               type="button"
               size="sm"
               onClick={() => router.get(route("auth.forgotPassword.form"))}
             >
-              Forgot password?
+              Passwort vergessen?
             </Anchor>
           </Group>
           <Button type="submit" fullWidth mt="xl" disabled={form.processing}>
-            Sign in
+            Anmelden
           </Button>
         </ContainerBox>
       </form>

@@ -16,9 +16,9 @@ export default function Dropzone({ selected, onChange, remove, ...props }) {
   const confirmDeleteAttachment = (index) => {
     openConfirmModal({
       type: "danger",
-      title: "Delete attachment",
-      content: `Are you sure you want to delete this attachment?`,
-      confirmLabel: "Delete",
+      title: "Anhang löschen",
+      content: `Möchten Sie diesen Anhang wirklich löschen?`,
+      confirmLabel: "Löschen",
       confirmProps: { color: "red" },
       onConfirm: () => remove(index),
     });
@@ -36,7 +36,7 @@ export default function Dropzone({ selected, onChange, remove, ...props }) {
         filename: file.name,
         contentType: file.type,
         nativeFallbackOnError: true,
-      }).catch((error) => console.error("Failed to download file", error));
+      }).catch((error) => console.error("Datei konnte nicht heruntergeladen werden", error));
     }
   };
 
@@ -46,7 +46,7 @@ export default function Dropzone({ selected, onChange, remove, ...props }) {
 
       <MantineDropzone
         onDrop={(files) => onChange([...selected, ...files])}
-        onReject={(files) => console.log("rejected files", files)}
+        onReject={(files) => console.log("abgelehnte Dateien", files)}
         {...props}
       >
         <Group justify="center" gap="md" mih={50} style={{ pointerEvents: "none" }}>
@@ -83,10 +83,10 @@ export default function Dropzone({ selected, onChange, remove, ...props }) {
 
           <div>
             <Text size="md" inline>
-              Drag files here or click to select
+              Ziehen Sie Dateien hierher oder klicken Sie zum Auswählen.
             </Text>
             <Text size="xs" c="dimmed" inline mt={7}>
-              Files of any type will be accepted
+              Es werden Dateien jeglicher Art akzeptiert.
             </Text>
           </div>
         </Group>

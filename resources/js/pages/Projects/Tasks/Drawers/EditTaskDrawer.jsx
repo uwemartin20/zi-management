@@ -177,16 +177,16 @@ export function EditTaskDrawer() {
             styles={{ separator: { opacity: 0.3 } }}
           >
             <Text size='xs'>{task.project.name}</Text>
-            <Text size='xs'>Task #{task.number}</Text>
+            <Text size='xs'>Aufgabe #{task.number}</Text>
             <Text size='xs'>
-              Created by {task.created_by_user.name} on {date(task.created_at)}
+              Erstellt von {task.created_by_user.name} on {date(task.created_at)}
             </Text>
           </Breadcrumbs>
           <form className={classes.inner}>
             <div className={classes.content}>
               <TextInput
                 label='Name'
-                placeholder='Task name'
+                placeholder='Aufgabename'
                 value={data.name}
                 onChange={e => updateValue('name', e.target.value)}
                 onBlur={() => onBlurUpdate('name')}
@@ -197,7 +197,7 @@ export function EditTaskDrawer() {
               <RichTextEditor
                 ref={editorRef}
                 mt='xl'
-                placeholder='Task description'
+                placeholder='Aufgabenbeschreibung'
                 content={data.description}
                 height={260}
                 onChange={content => updateValue('description', content)}
@@ -218,8 +218,8 @@ export function EditTaskDrawer() {
             </div>
             <div className={classes.sidebar}>
               <Select
-                label='Task group'
-                placeholder='Select task group'
+                label='Aufgabengruppe'
+                placeholder='Aufgabengruppe auswählen'
                 allowDeselect={false}
                 value={data.group_id.toString()}
                 onChange={value => updateValue('group_id', value)}
@@ -231,8 +231,8 @@ export function EditTaskDrawer() {
               />
 
               <Select
-                label='Assignee'
-                placeholder='Select assignee'
+                label='Empfänger'
+                placeholder='Empfänger auswählen'
                 searchable
                 mt='md'
                 value={data.assigned_to_user_id?.toString()}
@@ -249,8 +249,8 @@ export function EditTaskDrawer() {
                 valueFormat='DD MMM YYYY'
                 minDate={new Date()}
                 mt='md'
-                label='Due date'
-                placeholder='Pick task due date'
+                label='Fälligkeitsdatum'
+                placeholder='Aufgabe Fälligkeitsdatum auswählen'
                 value={data.due_on}
                 onChange={value => updateValue('due_on', value)}
                 readOnly={!can('edit task')}
@@ -264,7 +264,7 @@ export function EditTaskDrawer() {
               />
 
               <NumberInput
-                label='Time estimation'
+                label='Zeitschätzung'
                 mt='md'
                 decimalScale={2}
                 fixedDecimalScale
@@ -278,8 +278,8 @@ export function EditTaskDrawer() {
               />
 
               <Select
-                label='Pricing type'
-                placeholder='Select pricing type'
+                label='Preisart'
+                placeholder='Preisart auswählen'
                 mt='md'
                 value={data.pricing_type}
                 onChange={value => updateValue('pricing_type', value)}
@@ -289,7 +289,7 @@ export function EditTaskDrawer() {
 
               {isFixedPrice && (can('view time logs') || can('add time log')) && (
                 <NumberInput
-                  label='Fixed price'
+                  label='Festpreis'
                   mt='md'
                   decimalScale={2}
                   fixedDecimalScale
@@ -311,7 +311,7 @@ export function EditTaskDrawer() {
               )}
 
               <Checkbox
-                label='Billable'
+                label='Abrechnungsfähig'
                 mt='xl'
                 checked={data.billable}
                 onChange={event => updateValue('billable', event.currentTarget.checked)}
@@ -320,7 +320,7 @@ export function EditTaskDrawer() {
 
               {!hasRoles(user, ['client']) && (
                 <Checkbox
-                  label='Hidden from clients'
+                  label='Vor Kunden verborgen'
                   mt='md'
                   checked={data.hidden_from_clients}
                   onChange={event =>
@@ -331,8 +331,8 @@ export function EditTaskDrawer() {
               )}
 
               <MultiSelect
-                label='Subscribers'
-                placeholder={!data.subscribed_users.length ? 'Select subscribers' : null}
+                label='Abonnenten'
+                placeholder={!data.subscribed_users.length ? 'Abonnenten auswählen' : null}
                 mt='lg'
                 value={data.subscribed_users}
                 onChange={values => updateValue('subscribed_users', values)}

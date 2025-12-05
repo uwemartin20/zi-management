@@ -15,11 +15,11 @@ const ClientsIndex = () => {
   const { items } = usePage().props;
 
   const columns = prepareColumns([
-    { label: "User", column: "name" },
-    { label: "Email", column: "email" },
-    { label: "Companies", sortable: false },
+    { label: "Benutzer", column: "name" },
+    { label: "E-mail", column: "email" },
+    { label: "Firma", sortable: false },
     {
-      label: "Actions",
+      label: "Aktionen",
       sortable: false,
       visible: actionColumnVisibility("client user"),
     },
@@ -39,7 +39,7 @@ const ClientsIndex = () => {
       <Grid justify="space-between" align="center">
         <Grid.Col span="content">
           <Group>
-            <SearchInput placeholder="Search clients" search={search} />
+            <SearchInput placeholder="Clients suchen" search={search} />
             <ArchivedFilterButton />
           </Group>
         </Grid.Col>
@@ -50,7 +50,7 @@ const ClientsIndex = () => {
               radius="xl"
               onClick={() => redirectTo("clients.users.create")}
             >
-              Create
+              Erstellen
             </Button>
           )}
         </Grid.Col>
@@ -68,6 +68,6 @@ const ClientsIndex = () => {
   );
 };
 
-ClientsIndex.layout = (page) => <Layout title="Clients">{page}</Layout>;
+ClientsIndex.layout = (page) => <Layout title="Mitarbeiter">{page}</Layout>;
 
 export default ClientsIndex;

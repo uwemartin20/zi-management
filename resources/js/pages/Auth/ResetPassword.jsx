@@ -28,24 +28,24 @@ const ResetPassword = ({ token }) => {
   return (
     <>
       <Title className={classes.title} ta="center">
-        Reset Password
+        Passwort zurücksetzen
       </Title>
       <Text c="dimmed" fz="sm" ta="center">
-        Enter your email and new password
+        Geben Sie Ihre E-Mail-Adresse und Ihr neues Passwort ein.
       </Text>
 
       <ContainerBox shadow="md" p={30} mt="xl" radius="md">
         <form onSubmit={submit}>
           <TextInput
-            label="Email"
-            placeholder="Your email"
+            label="E-mail"
+            placeholder="Ihre E-Mail"
             required
             onChange={(e) => form.setData("email", e.target.value)}
             error={form.errors.email}
           />
           <PasswordInput
-            label="Password"
-            placeholder="New password"
+            label="Passwort"
+            placeholder="Neues passwort"
             required
             mt="md"
             value={form.data.password}
@@ -53,8 +53,8 @@ const ResetPassword = ({ token }) => {
             error={form.errors.password}
           />
           <PasswordInput
-            label="Confirm Password"
-            placeholder="Repeat new password"
+            label="Passwort bestätigen"
+            placeholder="Neues Passwort wiederholen"
             required
             mt="md"
             value={form.data.password_confirmation}
@@ -62,7 +62,7 @@ const ResetPassword = ({ token }) => {
             error={form.errors.password_confirmation}
           />
           <Button type="submit" fullWidth mt="xl" disabled={form.processing}>
-            Reset password
+            Passwort zurücksetzen
           </Button>
         </form>
       </ContainerBox>
@@ -70,6 +70,6 @@ const ResetPassword = ({ token }) => {
   );
 };
 
-ResetPassword.layout = (page) => <GuestLayout title="Reset Password">{page}</GuestLayout>;
+ResetPassword.layout = (page) => <GuestLayout title="Passwort zurücksetzen">{page}</GuestLayout>;
 
 export default ResetPassword;

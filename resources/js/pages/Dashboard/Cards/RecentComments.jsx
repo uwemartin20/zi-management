@@ -21,7 +21,7 @@ export default function RecentComments({ comments }) {
   return (
     <Card bg="none">
       <Title order={3} ml={15}>
-        Recent comments
+        Neueste Kommentare
       </Title>
 
       <Divider my={14} />
@@ -66,7 +66,7 @@ export default function RecentComments({ comments }) {
         </ScrollArea>
       ) : (
         <Center my={30}>
-          <EmptyWithIcon title="No comments" subtitle="On your tasks" icon={IconMessage} />
+          <EmptyWithIcon title="Keine Kommentare" subtitle="An Ihren Aufgaben" icon={IconMessage} />
         </Center>
       )}
     </Card>

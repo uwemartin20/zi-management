@@ -35,7 +35,7 @@ const ProfileIndex = () => {
     <>
       <Grid justify="space-between" align="flex-end" gutter="xl" mb="lg">
         <Grid.Col span="auto">
-          <Title order={1}>My Profile</Title>
+          <Title order={1}>Mein Profil</Title>
         </Grid.Col>
         <Grid.Col span="content"></Grid.Col>
       </Grid>
@@ -56,15 +56,15 @@ const ProfileIndex = () => {
             </Grid.Col>
             <Grid.Col span="auto">
               <FileInput
-                label="Profile image"
-                placeholder="Choose image"
+                label="Profil bild"
+                placeholder="Bild auswahlen"
                 accept="image/png,image/jpeg"
                 onChange={(image) => updateValue("avatar", image)}
                 clearable
                 error={form.errors.avatar}
               />
               <Text size="xs" c="dimmed" mt="sm">
-                If no image is uploaded we will try to fetch it via{" "}
+                Falls kein Bild hochgeladen wird, versuchen wir, es über folgende Methode abzurufen:{" "}
                 <Anchor href="https://unavatar.io" target="_blank" opacity={0.6}>
                   unavatar.io
                 </Anchor>{" "}
@@ -84,8 +84,8 @@ const ProfileIndex = () => {
           />
 
           <TextInput
-            label="Job title"
-            placeholder="e.g. Frontend Developer"
+            label="Berufsbezeichnung"
+            placeholder="z. B. Software-Entwickler"
             required
             mt="md"
             value={form.data.job_title}
@@ -95,18 +95,18 @@ const ProfileIndex = () => {
 
           <TextInput
             label="Phone"
-            placeholder="Users phone number"
+            placeholder="Telefonnummer des Nutzers"
             mt="md"
             value={form.data.phone}
             onChange={(e) => updateValue("phone", e.target.value)}
             error={form.errors.phone}
           />
 
-          <Divider mt="xl" mb="md" label="Login credentials" labelPosition="center" />
+          <Divider mt="xl" mb="md" label="Anmeldedaten" labelPosition="center" />
 
           <TextInput
             label="Email"
-            placeholder="User email"
+            placeholder="Benutzer E-Mail"
             required
             value={form.data.email}
             onChange={(e) => updateValue("email", e.target.value)}
@@ -115,8 +115,8 @@ const ProfileIndex = () => {
           />
 
           <PasswordInput
-            label="Password"
-            placeholder="User password"
+            label="Passwort"
+            placeholder="Benutzer passwort"
             mt="md"
             value={form.data.password}
             onChange={(e) => updateValue("password", e.target.value)}
@@ -124,8 +124,8 @@ const ProfileIndex = () => {
           />
 
           <PasswordInput
-            label="Confirm password"
-            placeholder="Confirm password"
+            label="Passwort bestätigen"
+            placeholder="Passwort bestätigen"
             mt="md"
             value={form.data.password_confirmation}
             onChange={(e) => updateValue("password_confirmation", e.target.value)}
@@ -133,7 +133,7 @@ const ProfileIndex = () => {
           />
 
           <Group justify="flex-end" mt="xl">
-            <ActionButton loading={form.processing}>Update</ActionButton>
+            <ActionButton loading={form.processing}>Aktualisieren</ActionButton>
           </Group>
         </form>
       </ContainerBox>

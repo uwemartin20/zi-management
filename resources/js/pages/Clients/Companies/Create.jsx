@@ -50,9 +50,9 @@ const ClientCompanyCreate = () => {
           onClick={() => redirectTo('clients.companies.index')}
           fz={14}
         >
-          Companies
+          Firma
         </Anchor>
-        <div>Create</div>
+        <div>Erstellen</div>
       </Breadcrumbs>
 
       <Grid
@@ -62,7 +62,7 @@ const ClientCompanyCreate = () => {
         mb='lg'
       >
         <Grid.Col span='auto'>
-          <Title order={1}>Create company</Title>
+          <Title order={1}>Firma Erstellen</Title>
         </Grid.Col>
         <Grid.Col span='content'></Grid.Col>
       </Grid>
@@ -71,7 +71,7 @@ const ClientCompanyCreate = () => {
         <form onSubmit={submit}>
           <TextInput
             label='Name'
-            placeholder='Company name'
+            placeholder='Firmename'
             required
             value={form.data.name}
             onChange={e => updateValue('name', e.target.value)}
@@ -79,8 +79,8 @@ const ClientCompanyCreate = () => {
           />
 
           <Select
-            label='Default currency'
-            placeholder='Select currency'
+            label='Standardwährung'
+            placeholder='Währung auswählen'
             required
             mt='md'
             searchable={true}
@@ -91,8 +91,8 @@ const ClientCompanyCreate = () => {
           />
 
           <MultiSelect
-            label='Clients'
-            placeholder='Select clients'
+            label='Mitarbeiter'
+            placeholder='Mitarbeiter auswählen'
             required
             mt='md'
             value={form.data.clients}
@@ -102,12 +102,12 @@ const ClientCompanyCreate = () => {
           />
 
           <Fieldset
-            legend='Location'
+            legend='Standort'
             mt='xl'
           >
             <TextInput
-              label='Address'
-              placeholder='Address'
+              label='Adresse'
+              placeholder='Adresse'
               value={form.data.address}
               onChange={e => updateValue('address', e.target.value)}
               error={form.errors.address}
@@ -115,8 +115,8 @@ const ClientCompanyCreate = () => {
 
             <Group grow>
               <TextInput
-                label='Postal code'
-                placeholder='Postal code'
+                label='Postleitzahl'
+                placeholder='Postleitzahl'
                 mt='md'
                 value={form.data.postal_code}
                 onChange={e => updateValue('postal_code', e.target.value)}
@@ -124,8 +124,8 @@ const ClientCompanyCreate = () => {
               />
 
               <TextInput
-                label='City'
-                placeholder='City'
+                label='Stadt'
+                placeholder='Stadt'
                 mt='md'
                 value={form.data.city}
                 onChange={e => updateValue('city', e.target.value)}
@@ -134,8 +134,8 @@ const ClientCompanyCreate = () => {
             </Group>
 
             <Select
-              label='Country'
-              placeholder='Select country'
+              label='Land'
+              placeholder='Land auswählen'
               mt='md'
               searchable={true}
               value={form.data.country_id}
@@ -150,16 +150,16 @@ const ClientCompanyCreate = () => {
             mt='xl'
           >
             <TextInput
-              label='Business ID'
-              placeholder='Business ID'
+              label='Geschäfts-ID'
+              placeholder='Geschäfts-ID'
               value={form.data.business_id}
               onChange={e => updateValue('business_id', e.target.value)}
               error={form.errors.business_id}
             />
 
             <TextInput
-              label='Tax ID'
-              placeholder='Tax ID'
+              label='Steuer-ID'
+              placeholder='Steuer-ID'
               mt='md'
               value={form.data.tax_id}
               onChange={e => updateValue('tax_id', e.target.value)}
@@ -177,7 +177,7 @@ const ClientCompanyCreate = () => {
           </Fieldset>
 
           <Fieldset
-            legend='Finance'
+            legend='Finanzen'
             mt='xl'
           >
             <TextInput
@@ -198,8 +198,8 @@ const ClientCompanyCreate = () => {
             />
 
             <Select
-              label='Default currency'
-              placeholder='Select currency'
+              label='Standardwährung'
+              placeholder='Währung auswählen'
               required
               mt='md'
               searchable={true}
@@ -211,21 +211,21 @@ const ClientCompanyCreate = () => {
           </Fieldset>
 
           <Fieldset
-            legend='Contact'
+            legend='Kontakt'
             mt='xl'
           >
             <Group grow>
               <TextInput
-                label='Email'
-                placeholder='Email'
+                label='E-mail'
+                placeholder='E-mail'
                 value={form.data.email}
                 onChange={e => updateValue('email', e.target.value)}
                 error={form.errors.email}
               />
 
               <TextInput
-                label='Phone'
-                placeholder='Phone'
+                label='Telefon'
+                placeholder='Telefon'
                 value={form.data.phone}
                 onChange={e => updateValue('phone', e.target.value)}
                 error={form.errors.phone}
@@ -247,7 +247,7 @@ const ClientCompanyCreate = () => {
             mt='xl'
           >
             <BackButton route='clients.companies.index' />
-            <ActionButton loading={form.processing}>Create</ActionButton>
+            <ActionButton loading={form.processing}>Erstellen</ActionButton>
           </Group>
         </form>
       </ContainerBox>
@@ -255,6 +255,6 @@ const ClientCompanyCreate = () => {
   );
 };
 
-ClientCompanyCreate.layout = page => <Layout title='Create company'>{page}</Layout>;
+ClientCompanyCreate.layout = page => <Layout title='Firma Erstellen'>{page}</Layout>;
 
 export default ClientCompanyCreate;

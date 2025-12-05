@@ -16,14 +16,14 @@ const LabelCreate = () => {
     <>
       <Breadcrumbs fz={14} mb={30}>
         <Anchor href="#" onClick={() => redirectTo("settings.labels.index")} fz={14}>
-          Labels
+          Label
         </Anchor>
-        <div>Create</div>
+        <div>Erstellen</div>
       </Breadcrumbs>
 
       <Grid justify="space-between" align="flex-end" gutter="xl" mb="lg">
         <Grid.Col span="auto">
-          <Title order={1}>Create label</Title>
+          <Title order={1}>Label Erstellen</Title>
         </Grid.Col>
         <Grid.Col span="content"></Grid.Col>
       </Grid>
@@ -32,7 +32,7 @@ const LabelCreate = () => {
         <form onSubmit={submit}>
           <TextInput
             label="Name"
-            placeholder="Label name"
+            placeholder="Labelname"
             required
             value={form.data.name}
             onChange={(e) => updateValue("name", e.target.value)}
@@ -40,7 +40,7 @@ const LabelCreate = () => {
           />
           <ColorInput
             label="Color"
-            placeholder="Label color"
+            placeholder="Label farbe"
             required
             mt="md"
             swatches={[
@@ -66,7 +66,7 @@ const LabelCreate = () => {
 
           <Group justify="space-between" mt="xl">
             <BackButton route="settings.labels.index" />
-            <ActionButton loading={form.processing}>Create</ActionButton>
+            <ActionButton loading={form.processing}>Erstellen</ActionButton>
           </Group>
         </form>
       </ContainerBox>
@@ -74,6 +74,6 @@ const LabelCreate = () => {
   );
 };
 
-LabelCreate.layout = (page) => <Layout title="Create label">{page}</Layout>;
+LabelCreate.layout = (page) => <Layout title="Label Erstellen">{page}</Layout>;
 
 export default LabelCreate;

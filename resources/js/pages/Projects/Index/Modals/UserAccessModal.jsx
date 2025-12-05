@@ -41,7 +41,7 @@ function ModalForm({ item }) {
         setClients([...data.clients]);
       })
       .catch(() =>
-        alert("Something went wrong, failed to load dropdown values"),
+        alert("Es ist ein Fehler aufgetreten, die Dropdown-Werte konnten nicht geladen werden"),
       )
       .finally(() => setRequestPending(false));
   }, [form.data]);
@@ -59,8 +59,8 @@ function ModalForm({ item }) {
       ) : (
         <>
           <MultiSelect
-            label="Users"
-            placeholder="Select users"
+            label="Benutzer"
+            placeholder="Benutzer auswählen"
             searchable
             value={requestPending ? [] : form.data.users}
             onChange={(values) => updateValue("users", values)}
@@ -69,8 +69,8 @@ function ModalForm({ item }) {
           />
 
           <MultiSelect
-            label="Clients"
-            placeholder="Select clients"
+            label="Kunden"
+            placeholder="Kunden Auswählen"
             searchable
             mt="md"
             value={requestPending ? [] : form.data.clients}
@@ -88,7 +88,7 @@ function ModalForm({ item }) {
           disabled={requestPending}
           loading={form.processing}
         >
-          Save
+          Speichern
         </Button>
       </Flex>
     </form>
@@ -99,7 +99,7 @@ const UserAccessModal = (item) => {
   modals.open({
     title: (
       <Text size="xl" fw={700} mb={-10}>
-        User access
+        Benutzerzugriff
       </Text>
     ),
     centered: true,

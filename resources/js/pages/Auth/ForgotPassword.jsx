@@ -32,28 +32,27 @@ const ForgotPassword = ({ status }) => {
   return (
     <>
       <Title className={classes.title} ta="center">
-        Forgot your password?
+        Passwort vergessen?
       </Title>
       <Text c="dimmed" fz="sm" ta="center">
-        Enter your email to get a reset link
+        Geben Sie Ihre E-Mail-Adresse ein, um einen Link zum Zurücksetzen zu erhalten.
       </Text>
 
       <ContainerBox shadow="md" p={30} mt="xl" radius="md">
         <Text c="dimmed" fz="sm" mb={20}>
-          Enter your email and we will email you a password reset link that will allow you to choose
-          a new one.
+          Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link, über den Sie ein neues Passwort auswählen können.
         </Text>
 
         {status && (
           <Alert radius="md" title={status} icon={<IconInfoCircle />} mb={10}>
-            Please read instruction in the email to set a new password for your account.
+            Bitte lesen Sie die Anweisungen in der E-Mail, um ein neues Passwort für Ihr Konto festzulegen.
           </Alert>
         )}
 
         <form onSubmit={submit}>
           <TextInput
-            label="Email"
-            placeholder="Your email"
+            label="E-mail"
+            placeholder="Ihre E-Mail"
             required
             onChange={(e) => form.setData("email", e.target.value)}
             onBlur={() => form.validate("email")}
@@ -68,11 +67,11 @@ const ForgotPassword = ({ status }) => {
             >
               <Center inline>
                 <IconArrowLeft style={{ width: rem(12), height: rem(12) }} stroke={1.5} />
-                <Box ml={5}>Back to the login</Box>
+                <Box ml={5}>Zurück zum Login</Box>
               </Center>
             </Anchor>
             <Button type="submit" className={classes.control} disabled={form.processing}>
-              Reset password
+              Passwort zurücksetzen
             </Button>
           </Group>
         </form>

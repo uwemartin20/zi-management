@@ -20,12 +20,12 @@ const TasksIndex = () => {
   return (
     <>
       <Breadcrumbs fz={14} mb={30}>
-        <div>My Work</div>
-        <div>Tasks</div>
+        <div>Meine Arbeit</div>
+        <div>Aufgaben</div>
       </Breadcrumbs>
 
       <Title order={1} mb={20}>
-        Tasks assigned to you
+        Ihnen zugewiesene Aufgaben
       </Title>
 
       <Box maw={1000}>
@@ -74,8 +74,8 @@ const TasksIndex = () => {
         ) : (
           <Center mih={300}>
             <EmptyWithIcon
-              title="All caught up!"
-              subtitle="No tasks assigned at the moment"
+              title="Alles auf dem neuesten Stand!"
+              subtitle="Derzeit sind keine Aufgaben zugewiesen."
               icon={IconRocket}
             />
           </Center>
@@ -85,6 +85,6 @@ const TasksIndex = () => {
   );
 };
 
-TasksIndex.layout = (page) => <Layout title="My Tasks">{page}</Layout>;
+TasksIndex.layout = (page) => <Layout title="Meine Aufgaben">{page}</Layout>;
 
 export default TasksIndex;

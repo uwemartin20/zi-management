@@ -89,7 +89,7 @@ const InvoiceCreate = () => {
             hourly_rate: project ? project.rate : 0,
           });
         })
-        .catch(error => console.error('Failed to fetch tasks', error));
+        .catch(error => console.error('Aufgaben konnten nicht abgerufen werden', error));
     }
   }, [form.data.projects]);
 
@@ -158,8 +158,8 @@ const InvoiceCreate = () => {
         <ContainerBox miw='440'>
           <form onSubmit={submit}>
             <TextInput
-              label='Invoice number'
-              placeholder='Invoice number'
+              label='Rechnungsnummer'
+              placeholder='Rechnungsnummer'
               required
               value={form.data.number}
               onChange={e => updateValue('number', e.target.value)}
@@ -167,8 +167,8 @@ const InvoiceCreate = () => {
             />
 
             <Select
-              label='Client company'
-              placeholder='Select client company'
+              label='Kundenunternehmen'
+              placeholder='Kundenunternehmen auswählen'
               searchable={true}
               allowDeselect={false}
               mt='md'
@@ -180,9 +180,9 @@ const InvoiceCreate = () => {
             />
 
             <MultiSelect
-              label='Projects'
+              label='Projekte'
               placeholder={
-                filteredProjects.length ? 'Select projects' : 'Please select client company first'
+                filteredProjects.length ? 'Projekte auswählen' : 'Bitte wählen Sie zuerst das Kundenunternehmen aus'
               }
               disabled={filteredProjects.length === 0}
               withAsterisk
@@ -194,7 +194,7 @@ const InvoiceCreate = () => {
             />
 
             <Checkbox
-              label='Fixed amount for whole invoice'
+              label='Festbetrag für die gesamte Rechnung'
               mt='md'
               checked={form.data.type === 'fixed_amount'}
               onChange={event =>
@@ -204,7 +204,7 @@ const InvoiceCreate = () => {
 
             {form.data.type === 'default' && (
               <NumberInput
-                label='Hourly rate'
+                label='Stundensatz'
                 mt='md'
                 allowNegative={false}
                 clampBehavior='strict'
@@ -219,7 +219,7 @@ const InvoiceCreate = () => {
 
             {form.data.type === 'fixed_amount' && (
               <NumberInput
-                label='Fixed amount'
+                label='Festbetrag'
                 mt='md'
                 allowNegative={false}
                 clampBehavior='strict'
@@ -234,7 +234,7 @@ const InvoiceCreate = () => {
 
             <Textarea
               label='Note'
-              placeholder='Invoice note'
+              placeholder='Rechnungsbeleg'
               mt='md'
               autosize
               minRows={4}
@@ -283,7 +283,7 @@ const InvoiceCreate = () => {
                       size='sm'
                       c='dimmed'
                     >
-                      No tasks with logged time were found
+                      Es wurden keine Aufgaben mit protokollierter Zeit gefunden.
                     </Text>
                   )}
                 </Box>
@@ -299,7 +299,7 @@ const InvoiceCreate = () => {
                     fw={600}
                     mb={-5}
                   >
-                    Total:
+                    Gesamt:
                   </Text>
                   <Text
                     fw={700}
@@ -323,13 +323,13 @@ const InvoiceCreate = () => {
                     fw={600}
                     align='center'
                   >
-                    No tasks found
+                    Keine Aufgaben gefunden
                   </Text>
                   <Text
                     fz={15}
                     c='dimmed'
                   >
-                    Select company and at least one project
+                    Unternehmen und mindestens ein Projekt auswählen
                   </Text>
                 </Box>
               </Center>
@@ -341,6 +341,6 @@ const InvoiceCreate = () => {
   );
 };
 
-InvoiceCreate.layout = page => <Layout title='Create invoice'>{page}</Layout>;
+InvoiceCreate.layout = page => <Layout title='Rechnung erstellen'>{page}</Layout>;
 
 export default InvoiceCreate;

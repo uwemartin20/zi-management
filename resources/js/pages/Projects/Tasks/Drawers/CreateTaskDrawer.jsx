@@ -102,7 +102,7 @@ export function CreateTaskDrawer() {
           ml={25}
           my='sm'
         >
-          Add new task
+          Neue Aufgabe hinzufügen
         </Text>
       }
       position='right'
@@ -126,7 +126,7 @@ export function CreateTaskDrawer() {
         <div className={classes.content}>
           <TextInput
             label='Name'
-            placeholder='Task name'
+            placeholder='Aufgabename'
             required
             data-autofocus
             value={form.data.name}
@@ -136,7 +136,7 @@ export function CreateTaskDrawer() {
 
           <RichTextEditor
             mt='xl'
-            placeholder='Task description'
+            placeholder='Aufgabenbeschreibung'
             height={260}
             onChange={content => updateValue('description', content)}
           />
@@ -149,8 +149,8 @@ export function CreateTaskDrawer() {
           />
 
           <MultiSelect
-            label='Subscribers'
-            placeholder='Select subscribers'
+            label='Abonnenten'
+            placeholder='Abonnenten auswählen'
             searchable
             mt='md'
             value={form.data.subscribed_users}
@@ -172,7 +172,7 @@ export function CreateTaskDrawer() {
               disabled={form.processing}
               onClick={closeDrawer}
             >
-              Cancel
+              Stornieren
             </Button>
 
             <Button
@@ -180,14 +180,14 @@ export function CreateTaskDrawer() {
               w={120}
               loading={form.processing}
             >
-              Add task
+              Hinzufügen
             </Button>
           </Flex>
         </div>
         <div className={classes.sidebar}>
           <Select
-            label='Task group'
-            placeholder='Select task group'
+            label='Aufgabengruppe'
+            placeholder='Aufgabengruppe auswählen'
             required
             value={form.data.group_id}
             onChange={value => updateValue('group_id', value)}
@@ -199,8 +199,8 @@ export function CreateTaskDrawer() {
           />
 
           <Select
-            label='Assignee'
-            placeholder='Select assignee'
+            label='Empfänger'
+            placeholder='Empfänger auswählen'
             searchable
             mt='md'
             value={form.data.assigned_to_user_id}
@@ -217,8 +217,8 @@ export function CreateTaskDrawer() {
             valueFormat='DD MMM YYYY'
             minDate={new Date()}
             mt='md'
-            label='Due date'
-            placeholder='Pick task due date'
+            label='Fälligkeitsdatum'
+            placeholder='Aufgabe Fälligkeitsdatum auswählen'
             value={form.data.due_on}
             onChange={value => updateValue('due_on', value)}
           />
@@ -231,7 +231,7 @@ export function CreateTaskDrawer() {
           />
 
           <NumberInput
-            label='Time estimation'
+            label='Zeitschätzung'
             mt='md'
             decimalScale={2}
             fixedDecimalScale
@@ -244,8 +244,8 @@ export function CreateTaskDrawer() {
           />
 
           <Select
-            label='Pricing type'
-            placeholder='Select pricing type'
+            label='Preisart'
+            placeholder='Preisart auswählen'
             required
             mt='md'
             value={form.data.pricing_type}
@@ -256,7 +256,7 @@ export function CreateTaskDrawer() {
 
           {isFixedPrice ? (
             <NumberInput
-              label='Fixed price'
+              label='Festpreis'
               mt='md'
               decimalScale={2}
               fixedDecimalScale
@@ -270,7 +270,7 @@ export function CreateTaskDrawer() {
           ) : null}
 
           <Checkbox
-            label='Billable'
+            label='Abrechnungsfähig'
             mt='xl'
             checked={form.data.billable}
             onChange={event => updateValue('billable', event.currentTarget.checked)}
@@ -278,7 +278,7 @@ export function CreateTaskDrawer() {
 
           {!hasRoles(user, ['client']) && (
             <Checkbox
-              label='Hidden from clients'
+              label='Vor Kunden verborgen'
               mt='md'
               checked={form.data.hidden_from_clients}
               onChange={event => updateValue('hidden_from_clients', event.currentTarget.checked)}

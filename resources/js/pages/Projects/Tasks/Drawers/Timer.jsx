@@ -83,7 +83,7 @@ export default function Timer({ task, ...props }) {
           </Group>
         ) : (
           <Text ml={10} fz={15} fw={500}>
-            Time logs
+            Zeitprotokolle
           </Text>
         )}
         {task.time_logs.length > 0 && can("view time logs") && (
@@ -101,7 +101,7 @@ export default function Timer({ task, ...props }) {
                   </Text>
                   {isTimerRunning(timeLog) ? (
                     <Text fz={14} fw={600} c="blue" className={classes.blink}>
-                      running
+                      läuft
                     </Text>
                   ) : (
                     <Group gap={7}>
@@ -125,7 +125,7 @@ export default function Timer({ task, ...props }) {
             <Divider my={-5} />
             <Group wrap="nowrap" justify="space-between" className={classes.summary}>
               <Text fz={15} fw={500}>
-                Total:
+                Gesamt:
               </Text>
               <Text fw={600}>{humanReadableTime(totalMinutes)}h</Text>
             </Group>

@@ -19,7 +19,7 @@ export default function TableRow({ item }) {
           fz='xs'
           c='dimmed'
         >
-          Email
+          E-mail
         </Text>
       </Table.Td>
       <Table.Td>
@@ -52,15 +52,15 @@ export default function TableRow({ item }) {
             restorePermission='restore client company'
             archive={{
               route: 'clients.companies.destroy',
-              title: 'Archive company',
-              content: `Are you sure you want to archive this company?`,
-              confirmLabel: 'Archive',
+              title: 'Archiv Firma',
+              content: `Sind Sie sicher, dass Sie dieses Unternehmen archivieren möchten?`,
+              confirmLabel: 'Archiv',
             }}
             restore={{
               route: 'clients.companies.restore',
-              title: 'Restore company',
-              content: `Are you sure you want to restore this company?`,
-              confirmLabel: 'Restore',
+              title: 'Unternehmen wiederherstellen',
+              content: `Sind Sie sicher, dass Sie dieses Unternehmen wiederherstellen wollen?`,
+              confirmLabel: 'Wiederherstellen',
             }}
           />
         </Table.Td>

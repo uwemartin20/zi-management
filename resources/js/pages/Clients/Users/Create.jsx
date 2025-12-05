@@ -40,14 +40,14 @@ const ClientCreate = () => {
     <>
       <Breadcrumbs fz={14} mb={30}>
         <Anchor href="#" onClick={() => redirectTo("clients.users.index")} fz={14}>
-          Clients
+          Mitarbeiter
         </Anchor>
-        <div>Create</div>
+        <div>Erstellen</div>
       </Breadcrumbs>
 
       <Grid justify="space-between" align="flex-end" gutter="xl" mb="lg">
         <Grid.Col span="auto">
-          <Title order={1}>Create client</Title>
+          <Title order={1}>Mitarbeiter erstellen</Title>
         </Grid.Col>
         <Grid.Col span="content"></Grid.Col>
       </Grid>
@@ -66,15 +66,15 @@ const ClientCreate = () => {
             </Grid.Col>
             <Grid.Col span="auto">
               <FileInput
-                label="Profile image"
-                placeholder="Choose image"
+                label="Profilbild"
+                placeholder="Bild auswählen"
                 accept="image/png,image/jpeg"
                 onChange={(image) => updateValue("avatar", image)}
                 clearable
                 error={form.errors.avatar}
               />
               <Text size="xs" c="dimmed" mt="sm">
-                If no image is uploaded we will try to fetch it via{" "}
+                Falls kein Bild hochgeladen wird, versuchen wir, es über folgende Methode abzurufen:{" "}
                 <Anchor href="https://unavatar.io" target="_blank" opacity={0.6}>
                   unavatar.io
                 </Anchor>{" "}
@@ -85,7 +85,7 @@ const ClientCreate = () => {
 
           <TextInput
             label="Name"
-            placeholder="User full name"
+            placeholder="Vollständiger Benutzername"
             required
             mt="md"
             value={form.data.name}
@@ -95,7 +95,7 @@ const ClientCreate = () => {
 
           <TextInput
             label="Phone"
-            placeholder="Users phone number"
+            placeholder="Telefonnummer des Nutzers"
             mt="md"
             value={form.data.phone}
             onChange={(e) => updateValue("phone", e.target.value)}
@@ -103,8 +103,8 @@ const ClientCreate = () => {
           />
 
           <MultiSelect
-            label="Companies"
-            placeholder="Clients companies"
+            label="Firma"
+            placeholder="Mitarbeiter Firma"
             mt="md"
             value={form.data.companies}
             onChange={(values) => updateValue("companies", values)}
@@ -114,15 +114,15 @@ const ClientCreate = () => {
 
           {form.data.companies.length === 0 && (
             <Text c="dimmed" fz="xs" mt="xs">
-              If left empty, you will be asked to create a company after creating the client.
+              Wenn Sie dieses Feld leer lassen, werden Sie nach der Erstellung des Mitarbeiter aufgefordert, ein Unternehmen anzulegen.
             </Text>
           )}
 
-          <Divider mt="xl" mb="md" label="Login credentials" labelPosition="center" />
+          <Divider mt="xl" mb="md" label="Anmeldedaten" labelPosition="center" />
 
           <TextInput
-            label="Email"
-            placeholder="User email"
+            label="E-mail"
+            placeholder="Benutzer-E-Mail"
             required
             value={form.data.email}
             onChange={(e) => updateValue("email", e.target.value)}
@@ -131,8 +131,8 @@ const ClientCreate = () => {
           />
 
           <PasswordInput
-            label="Password"
-            placeholder="User password"
+            label="Passwort"
+            placeholder="Benutzerpasswort"
             required
             mt="md"
             value={form.data.password}
@@ -141,8 +141,8 @@ const ClientCreate = () => {
           />
 
           <PasswordInput
-            label="Confirm password"
-            placeholder="Confirm password"
+            label="Passwort bestätigen"
+            placeholder="Passwort bestätigen"
             required
             mt="md"
             value={form.data.password_confirmation}
@@ -152,7 +152,7 @@ const ClientCreate = () => {
 
           <Group justify="space-between" mt="xl">
             <BackButton route="clients.users.index" />
-            <ActionButton loading={form.processing}>Create</ActionButton>
+            <ActionButton loading={form.processing}>Erstellen</ActionButton>
           </Group>
         </form>
       </ContainerBox>
@@ -160,6 +160,6 @@ const ClientCreate = () => {
   );
 };
 
-ClientCreate.layout = (page) => <Layout title="Create client">{page}</Layout>;
+ClientCreate.layout = (page) => <Layout title="Mitarbeiter Erstellen">{page}</Layout>;
 
 export default ClientCreate;

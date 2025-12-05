@@ -80,18 +80,18 @@ export default function UserButton() {
       </Menu.Target>
 
       <Menu.Dropdown>
-        <Menu.Label>Account</Menu.Label>
+        <Menu.Label>Konto</Menu.Label>
         <Menu.Item
           leftSection={<IconUser style={{ width: rem(14), height: rem(14) }} />}
           onClick={() => redirectTo("account.profile.edit")}
         >
-          My Profile
+          Mein Profil
         </Menu.Item>
         <Menu.Item
           leftSection={<IconBell style={{ width: rem(14), height: rem(14) }} />}
           onClick={() => redirectTo("notifications")}
         >
-          Notifications
+          Benachrichtigung
         </Menu.Item>
 
         <Menu.Divider />
@@ -116,7 +116,7 @@ export default function UserButton() {
           leftSection={<IconLogout style={{ width: rem(14), height: rem(14) }} />}
           onClick={logout}
         >
-          Logout
+          Abmelden
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>
