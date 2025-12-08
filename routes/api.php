@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,5 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/projects', [ProjectController::class, 'index']);
     Route::get('/projects/{id}', [ProjectController::class, 'show']);
+    Route::get('/projects/{project}/tasks/{task}', [TaskController::class, 'show']);
 });
