@@ -4,8 +4,8 @@ services:
     image: nginx:stable
     container_name: nginx
     ports:
-      - "80:80"
-      - "443:443"
+      - "8000:80"
+      - "8443:443"
     depends_on:
       - php
     volumes:
