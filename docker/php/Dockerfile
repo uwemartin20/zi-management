@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /var/www/html
 
-RUN mkdir -p storage bootstrap/cache \
-    && chown -R www-data:www-data /var/www/html \
+RUN chown -R www-data:www-data /var/www/html \
+    && find /var/www/html -type f -exec chmod 644 {} \; \
+    && find /var/www/html -type d -exec chmod 755 {} \; \
     && chmod -R 775 storage bootstrap/cache
